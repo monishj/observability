@@ -1,0 +1,23 @@
+actions:
+  1:
+    action: delete_indices
+    description: Deletes log indices older than ${retention} days
+    options:
+      continue_if_exception: False
+      ignore_empty_list: True
+      disable_action: False
+    filters:
+      - filtertype: none
+      - filtertype: age
+        source: name
+        direction: older
+        timestring: '%Y.%m.%d'
+        unit: days
+        unit_count: ${retention}
+  2:
+    action: replicas
+    description: Set the number of replicas per shard to 0
+    options:
+      count: 0
+    filters:
+      - filtertype: none

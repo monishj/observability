@@ -1,0 +1,11 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "es:ESHttp*",
+      "Resource": "arn:aws:es:eu-central-1:${account_id}:domain/${es_domain}/*"
+    }
+  ]
+}

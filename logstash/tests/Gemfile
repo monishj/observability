@@ -1,0 +1,4 @@
+gem 'awspec'
+gem 'json'
+gem 'webrick'
+gem 'libxml-ruby'
